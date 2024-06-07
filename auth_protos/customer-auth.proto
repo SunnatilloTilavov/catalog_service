@@ -5,7 +5,7 @@ option go_package = "genproto/auth_service";
 package auth_service;
 
 service CustomerAuth {
-    rpc Login(LoginRequest) returns (LoginResponse) {}
+    rpc LoginByPassword(LoginRequest) returns (LoginResponse) {}
     rpc GmailCheck(GmailCheckRequest) returns (GmailCheckResponse) {}
     rpc RegisterByMail(GmailCheckRequest) returns (Empty) {}
     rpc RegisterByMailConfirm(RConfirm) returns (Empty) {}
