@@ -83,7 +83,6 @@ message Order {
     string courier_name = 17;
     string created_at = 18;
     string updated_at = 19;
-    int64 deleted_at = 20;
 }
 
 message UpdateOrder {
