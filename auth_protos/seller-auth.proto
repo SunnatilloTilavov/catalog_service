@@ -29,6 +29,8 @@ message SellerRConfirm{
     string otp=1;
     string gmail=2;
     string password=3;
+    string gender=4;
+    string language=5;
 }
 
 message SellerLoginRequest {

@@ -8,7 +8,7 @@ service CustomerAuth {
     rpc LoginByPassword(LoginRequest) returns (LoginResponse) {}
     rpc GmailCheck(GmailCheckRequest) returns (GmailCheckResponse) {}
     rpc RegisterByMail(GmailCheckRequest) returns (Empty) {}
-    rpc RegisterByMailConfirm(RConfirm) returns (Empty) {}
+    rpc RegisterByMailConfirm(RConfirm) returns (RegGmailResp) {}
     rpc Create(CreateRequest) returns (Empty) {}
     rpc LoginByGmail(GmailCheckRequest) returns (Empty) {}
     rpc LoginByGmailComfirm(LoginByGmailRequest) returns (LoginResponse) {}
@@ -19,6 +19,10 @@ service CustomerAuth {
 
 message Empty {}
 
+message RegGmailResp{
+    string id =1;
+}
+
 message CreateRequest{
     string gmail=1;
     string password=2;
@@ -28,6 +32,8 @@ message RConfirm{
     string otp=1;
     string gmail=2;
     string password=3;
+    string gender=4;
+    string language=5;
 }
 
 message LoginRequest {
