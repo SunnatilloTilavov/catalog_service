@@ -18,6 +18,11 @@ message ShopPrimaryKey {
     string id = 1;
 }
 
+message LocationShop {
+    double longitude = 1;
+    double latitude = 2;
+}
+
 message CreateShop {
     string phone = 1;
     string name_uz = 2;
@@ -26,7 +31,7 @@ message CreateShop {
     string description_uz=5;
     string description_ru=6;
     string description_en=7;
-    string location=8;
+    LocationShop location=8;
     string currency=9;
     repeated string payment_types=10;
 }
@@ -41,7 +46,7 @@ message GetByID {
     string description_uz=7;
     string description_ru=8;
     string description_en=9;
-    string location=10;
+    LocationShop location=10;
     string currency=11;
     string created_at = 13;
     string updated_at = 14;
@@ -58,7 +63,7 @@ message Shop {
     string description_uz=7;
     string description_ru=8;
     string description_en=9;
-    string location=10;
+    LocationShop location=10;
     string currency=11;
     repeated string payment_types=12;
     string created_at = 13;
@@ -74,7 +79,7 @@ message UpdateShopRequest {
     string description_uz=5;
     string description_ru=6;
     string description_en=7;
-    string location=8;
+    LocationShop location=8;
     string currency=9;
     string id =10;
     repeated string payment_types=11;
