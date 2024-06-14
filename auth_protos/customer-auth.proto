@@ -34,6 +34,7 @@ message RConfirm{
     string password=3;
     string gender=4;
     string language=5;
+    string date_of_birth=6;
 }
 
 message LoginRequest {
