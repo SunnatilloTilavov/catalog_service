@@ -10,6 +10,7 @@ service CustomerService {
     rpc GetList(GetListCustomerRequest) returns (GetListCustomerResponse) {}
     rpc Update(UpdateCustomerRequest) returns (UpdateCustomerResponse) {}
     rpc Delete(CustomerPrimaryKey) returns (Empty) {}
+    rpc GetByGmail(CustomerGmail) returns (CustomerPrimaryKey) {}
 }
 
 message Empty {}
@@ -18,6 +19,10 @@ message CustomerPrimaryKey {
     string id = 1;
 }
     
+message CustomerGmail{
+    string gmail=1;
+}
+
 message CreateCustomer {
     string phone = 1;
     string gmail = 2;

@@ -10,12 +10,17 @@ service SellerService {
     rpc GetList(GetListSellerRequest) returns (GetListSellerResponse) {}
     rpc Update(UpdateSellerRequest) returns (UpdateSellerResponse) {}
     rpc Delete(SellerPrimaryKey) returns (SellerEmpty) {}
+    rpc GetByGmail(SellerGmail) returns (SellerPrimaryKey) {}
 }
 
 message SellerEmpty {}
 
 message SellerPrimaryKey {
     string id = 1;
+}
+
+message SellerGmail{
+    string gmail=1;
 }
 
 message CreateSeller {

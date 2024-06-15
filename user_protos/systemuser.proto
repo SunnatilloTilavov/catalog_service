@@ -10,12 +10,17 @@ service SystemUserService {
     rpc GetList(GetListSystemUserRequest) returns (GetListSystemUserResponse) {}
     rpc Update(UpdateSystemUserRequest) returns (UpdateSystemUserResponse) {}
     rpc Delete(SystemUserPrimaryKey) returns (SystemUserEmpty) {}
+    rpc GetByGmail(SystemUserGmail) returns (SystemUserPrimaryKey) {}
 }
 
 message SystemUserEmpty {}
 
 message SystemUserPrimaryKey {
     string id = 1;
+}
+
+message SystemUserGmail{
+    string gmail=1;
 }
 
 message CreateSystemUser {
