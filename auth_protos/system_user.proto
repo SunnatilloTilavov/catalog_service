@@ -15,7 +15,7 @@ service SystemUserAuth {
     rpc SystemUserLoginByGmailComfirm(SystemUserLoginByGmailRequest) returns (SystemUserLoginResponse) {}
     rpc SystemUserUpdatePassword(SystemUserCreateRequest) returns (SystemUserEmpty) {}
     rpc SystemUserResetPassword(SystemUserGmailCheckRequest) returns (SystemUserEmpty) {}
-    rpc SystemUserResetPasswordConfirm(SystemUserRConfirm) returns (SystemUserEmpty) {}
+    rpc SystemUserResetPasswordConfirm(SystemUserPasswordConfirm) returns (SystemUserEmpty) {}
 }   
 
 message SystemUserEmpty {}
@@ -57,4 +57,9 @@ message SystemUserGmailCheckResponse{
 message SystemUserLoginByGmailRequest {
     string otp=1;
     string gmail=2;
+}
+
+message SystemUserPasswordConfirm {
+    string gmail=1;
+    string password=2;
 }

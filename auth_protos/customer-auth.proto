@@ -14,7 +14,7 @@ service CustomerAuth {
     rpc LoginByGmailComfirm(LoginByGmailRequest) returns (LoginResponse) {}
     rpc UpdatePassword(CreateRequest) returns (Empty) {}
     rpc ResetPassword(GmailCheckRequest) returns (Empty) {}
-    rpc ResetPasswordConfirm(RConfirm) returns (Empty) {}
+    rpc ResetPasswordConfirm(CustomerPasswordConfirm) returns (Empty) {}
 } 
 
 message Empty {}
@@ -58,4 +58,9 @@ message GmailCheckResponse{
 message LoginByGmailRequest {
     string otp=1;
     string gmail=2;
+}
+
+message CustomerPasswordConfirm {
+    string gmail=1;
+    string password=2;
 }

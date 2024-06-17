@@ -15,7 +15,7 @@ service SellerAuth {
     rpc SellerLoginByGmailComfirm(SellerLoginByGmailRequest) returns (SellerLoginResponse) {}
     rpc SellerUpdatePassword(SellerCreateRequest) returns (SellerEmpty) {}
     rpc SellerResetPassword(SellerGmailCheckRequest) returns (SellerEmpty) {}
-    rpc SellerResetPasswordConfirm(SellerRConfirm) returns (SellerEmpty) {}
+    rpc SellerResetPasswordConfirm(SellerPasswordConfirm) returns (SellerEmpty) {}
 }   
 
 message SellerEmpty {}
@@ -54,4 +54,9 @@ message SellerGmailCheckResponse{
 message SellerLoginByGmailRequest {
     string otp=1;
     string gmail=2;
+}
+
+message SellerPasswordConfirm {
+    string gmail=1;
+    string password=2;
 }
