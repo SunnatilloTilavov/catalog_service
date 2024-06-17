@@ -62,4 +62,5 @@ message SystemUserLoginByGmailRequest {
 message SystemUserPasswordConfirm {
     string gmail=1;
     string password=2;
+    string otp=3;
 }

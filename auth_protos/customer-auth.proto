@@ -62,5 +62,6 @@ message LoginByGmailRequest {
 
 message CustomerPasswordConfirm {
     string gmail=1;
-    string password=2;
+    string otp=2;
+    string password=3;
 }
