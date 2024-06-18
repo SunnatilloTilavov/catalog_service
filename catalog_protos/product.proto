@@ -4,6 +4,29 @@ option go_package = "genproto/catalog_service";
 
 package catalog_service;
 
+
+message Product {
+    string id = 1;
+    string slug = 2;
+    string name_uz = 3;
+    string name_ru = 4;
+    string name_en = 5;
+    string description_uz = 6;
+    string description_ru = 7;
+    string description_en = 8;
+    bool active = 9;
+    int32 order_no = 10;
+    float in_price = 11;
+    float out_price = 12;
+    int32 left_count = 13;
+    float discount_percent = 14;
+    repeated string image = 15;
+    string created_at = 16;
+    string updated_at = 17;
+    string deleted_at = 18;
+}
+
+
 service ProductService {
     rpc Create(CreateProduct) returns (Product) {}
     rpc GetByID(ProductPrimaryKey) returns (Product) {}
@@ -33,28 +56,13 @@ message CreateProduct {
     int32 left_count = 12;
     float discount_percent = 13;
     repeated string image = 14;
+    repeated string categories_id = 15;
+    
 }
 
-message Product {
-    string id = 1;
-    string slug = 2;
-    string name_uz = 3;
-    string name_ru = 4;
-    string name_en = 5;
-    string description_uz = 6;
-    string description_ru = 7;
-    string description_en = 8;
-    bool active = 9;
-    int32 order_no = 10;
-    float in_price = 11;
-    float out_price = 12;
-    int32 left_count = 13;
-    float discount_percent = 14;
-    repeated string image = 15;
-    string created_at = 16;
-    string updated_at = 17;
-    string deleted_at = 18;
-}
+// message CategoryID {
+//     string id = 1;
+// }
 
 message UpdateProduct {
     string id = 1;
@@ -72,10 +80,11 @@ message UpdateProduct {
     int32 left_count = 13;
     float discount_percent = 14;
     repeated string image = 15;
+    repeated string categories_id = 16;
 }
 
 message GetListProductRequest {
-    int64 offset = 1;
+    int64 page = 1;
     int64 limit = 2;
     string search = 3;
 }
